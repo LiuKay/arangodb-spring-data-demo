@@ -20,15 +20,18 @@
 
 package com.arangodb.spring.demo;
 
+import com.arangodb.spring.demo.runner.CrudRunner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
-import com.arangodb.spring.demo.runner.AQLRunner;
-import com.arangodb.spring.demo.runner.ByExampleRunner;
-import com.arangodb.spring.demo.runner.CrudRunner;
-import com.arangodb.spring.demo.runner.DerivedQueryRunner;
-import com.arangodb.spring.demo.runner.GeospatialRunner;
-import com.arangodb.spring.demo.runner.RelationsRunner;
+//import com.arangodb.spring.demo.runner.AQLRunner;
+//import com.arangodb.spring.demo.runner.ByExampleRunner;
+//import com.arangodb.spring.demo.runner.CrudRunner;
+//import com.arangodb.spring.demo.runner.DerivedQueryRunner;
+//import com.arangodb.spring.demo.runner.GeospatialRunner;
+//import com.arangodb.spring.demo.runner.RelationsRunner;
 
 /**
  * @author Mark Vollmary
@@ -38,9 +41,12 @@ import com.arangodb.spring.demo.runner.RelationsRunner;
 public class DemoApplication {
 
 	public static void main(final String... args) {
-		final Class<?>[] runner = new Class<?>[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class,
-				RelationsRunner.class, AQLRunner.class, GeospatialRunner.class };
-		System.exit(SpringApplication.exit(SpringApplication.run(runner, args)));
+        SpringApplication.run(DemoApplication.class, args);
 	}
 
+
+	@Bean
+	CommandLineRunner runner(){
+        return new CrudRunner();
+    }
 }

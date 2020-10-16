@@ -20,22 +20,18 @@
 
 package com.arangodb.spring.demo.runner;
 
+import com.arangodb.spring.demo.entity.Character;
+import com.arangodb.spring.demo.repository.CharacterRepository;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.ComponentScan;
-
-import com.arangodb.spring.demo.entity.Character;
-import com.arangodb.spring.demo.repository.CharacterRepository;
 
 /**
  * @author Mark Vollmary
  *
  */
-@ComponentScan("com.arangodb.spring.demo")
 public class DerivedQueryRunner implements CommandLineRunner {
 
 	@Autowired

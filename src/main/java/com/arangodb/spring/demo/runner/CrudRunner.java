@@ -20,27 +20,23 @@
 
 package com.arangodb.spring.demo.runner;
 
+import com.arangodb.spring.demo.entity.Character;
+import com.arangodb.spring.demo.repository.CharacterRepository;
+import com.arangodb.springframework.core.ArangoOperations;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Spliterators;
 import java.util.stream.StreamSupport;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-
-import com.arangodb.spring.demo.entity.Character;
-import com.arangodb.spring.demo.repository.CharacterRepository;
-import com.arangodb.springframework.core.ArangoOperations;
 
 /**
  * @author Mark Vollmary
  *
  */
-@ComponentScan("com.arangodb.spring.demo")
 public class CrudRunner implements CommandLineRunner {
 
 	static final Collection<Character> characters = createCharacters();

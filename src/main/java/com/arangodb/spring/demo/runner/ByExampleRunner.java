@@ -20,22 +20,18 @@
 
 package com.arangodb.spring.demo.runner;
 
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-
 import com.arangodb.spring.demo.entity.Character;
 import com.arangodb.spring.demo.repository.CharacterRepository;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 
 /**
  * @author Mark Vollmary
  *
  */
-@ComponentScan("com.arangodb.spring.demo")
 public class ByExampleRunner implements CommandLineRunner {
 
 	@Autowired

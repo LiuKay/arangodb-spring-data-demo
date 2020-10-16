@@ -20,22 +20,18 @@
 
 package com.arangodb.spring.demo.runner;
 
-import java.util.Arrays;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.ComponentScan;
-
 import com.arangodb.spring.demo.entity.Character;
 import com.arangodb.spring.demo.entity.ChildOf;
 import com.arangodb.spring.demo.repository.CharacterRepository;
 import com.arangodb.spring.demo.repository.ChildOfRepository;
+import java.util.Arrays;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 
 /**
  * @author Mark Vollmary
  *
  */
-@ComponentScan("com.arangodb.spring.demo")
 public class RelationsRunner implements CommandLineRunner {
 
 	@Autowired
